@@ -9,14 +9,14 @@ int main()
 
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
+    
 
     ComponentStorage storage;
     storage.add_component(Type::textureComponent);
     storage.add_component(Type::drawComponent);
+    ((TextureComponent*)(storage.get_component(Type::textureComponent)))->set(&texture);
+    ((DrawComponent*)(storage.get_component(Type::drawComponent)))->set(&(((TextureComponent*)(storage.get_component(Type::textureComponent)))->sprite));
 
-    storage.get_component(Type::textureComponent)
-    
-    
     while (window.isOpen())
     {
         sf::Event event;
@@ -27,7 +27,7 @@ int main()
         }
 
         window.clear();
-        window.draw(wind);
+        window.draw(*((DrawComponent*)(storage.get_component(Type::drawComponent))));
         window.display();
     }
 

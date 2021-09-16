@@ -146,12 +146,19 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Colissions.cpp" />
+    <ClCompile Include="Entity.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Colissions.h" />
+    <ClInclude Include="ColissionsComponent.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="ComponentStorage.h" />
     <ClInclude Include="DrawComponent.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="MoveComponent.h" />
+    <ClInclude Include="setter.h" />
     <ClInclude Include="TextureComponent.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

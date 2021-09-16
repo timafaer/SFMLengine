@@ -3,7 +3,8 @@ enum class Type
 {
 	component,
 	drawComponent,
-	textureComponent
+	textureComponent,
+	moveComponent
 };
 
 class Component

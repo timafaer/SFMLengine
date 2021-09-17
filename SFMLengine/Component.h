@@ -1,7 +1,7 @@
 #pragma once
 enum class Type
 {
-	component,
+	component ,
 	drawComponent,
 	textureComponent,
 	moveComponent

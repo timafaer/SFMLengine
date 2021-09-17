@@ -24,14 +24,21 @@ public:
 		}
 	}
 
-	Component* get_component(Type type) {
-		for (int i = 0; i < components.size(); i++) {
+
+	template<typename T>
+T get_component(){
+		
+		Type type;
+
+	if constexpr (std::is_name_v<T, Component*>) type = Type::component;
+	else if constexpr (std::is_name_v<T, DrawComponent*>) type = Type::drawComponent;
+	else if constexpr (std::is_name_v<T, TextureComponent*>) type = Type::textureComponent;
+
+	for (int i = 0; i < components.size(); i++) {
 			if (components[i]->type() == type)
-				return components[i];
-		}
-
+				return (T)components[i];
 	}
-
+}
 	void remove_component(Type type){}
 
 	~ComponentStorage() {}

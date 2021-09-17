@@ -14,8 +14,9 @@ int main()
     ComponentStorage storage;
     storage.add_component(Type::textureComponent);
     storage.add_component(Type::drawComponent);
-    ((TextureComponent*)(storage.get_component(Type::textureComponent)))->set(&texture);
-    ((DrawComponent*)(storage.get_component(Type::drawComponent)))->set(&(((TextureComponent*)(storage.get_component(Type::textureComponent)))->sprite));
+
+    storage.get_component<TextureComponent*>()->set(&texture);
+    storage.get_component<DrawComponent*>()->set(&(storage.get_component<TextureComponent*>()->sprite));
 
     while (window.isOpen())
     {
@@ -27,7 +28,7 @@ int main()
         }
 
         window.clear();
-        window.draw(*((DrawComponent*)(storage.get_component(Type::drawComponent))));
+        window.draw(*(storage.get_component<DrawComponent*>()));
         window.display();
     }
 

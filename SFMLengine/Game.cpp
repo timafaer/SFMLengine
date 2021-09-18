@@ -4,11 +4,25 @@ Game::Game()
 {
 	texture.loadFromFile("texture.jpg");
 	add_entity();
-	entities[0].add_component(Type::textureComponent);
+	add_entity();
+	entities[0].add_component(Type::vertexComponent);
 	entities[0].add_component(Type::drawComponent);
-	entities[0].get<TextureComponent*>()->set(&texture);
-	entities[0].get<DrawComponent*>()->set(&entities[0].get<TextureComponent*>()->sprite);
-	window.create(sf::VideoMode(200, 200), "SFML works!");
+
+	entities[1].add_component(Type::vertexComponent);
+	entities[1].add_component(Type::drawComponent);
+
+	sf::Vector2f pos[2] = { sf::Vector2f(100, 100), sf::Vector2f(150, 110) };
+
+	entities[0].get<VertexComponent*>()->set(sf::Lines,pos);
+	entities[0].get<DrawComponent*>()->set(&entities[0].get<VertexComponent*>()->vertex);
+
+	pos[1] = sf::Vector2f(90, 150);
+
+
+	entities[1].get<VertexComponent*>()->set(sf::Lines, pos);
+	entities[1].get<DrawComponent*>()->set(&entities[1].get<VertexComponent*>()->vertex);
+	window.create(sf::VideoMode(500, 500), "SFML works!");
+	window.setFramerateLimit(60);
 }
 
 void Game::add_entity()
@@ -28,7 +42,8 @@ void Game::main_loop()
 void Game::draw()
 {
 	window.clear();
-	window.draw(*entities[0].get<DrawComponent*>());
+	for (auto i : entities)
+		window.draw(*i.get<DrawComponent*>());
 	window.display();
 }
 

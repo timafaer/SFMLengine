@@ -162,6 +162,7 @@
     <ClInclude Include="MoveComponent.h" />
     <ClInclude Include="setter.h" />
     <ClInclude Include="TextureComponent.h" />
+    <ClInclude Include="VertexComponent.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -4,6 +4,7 @@ enum class Type
 	component ,
 	drawComponent,
 	textureComponent,
+	vertexComponent,
 	moveComponent
 };
 

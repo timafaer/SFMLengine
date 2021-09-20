@@ -1,5 +1,5 @@
 #pragma once
-#include"Component.h"
+/*#include"Component.h"
 #include<SFML/Graphics.hpp>
 #include<vector>
 #include<cmath>
@@ -23,3 +23,4 @@ public:
 
 
 };
+*/

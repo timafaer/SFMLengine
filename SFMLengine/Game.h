@@ -1,5 +1,7 @@
 #pragma once
 #include"Entity.h"
+#include<vector>
+#include<iostream>
 class Game
 {
 private:

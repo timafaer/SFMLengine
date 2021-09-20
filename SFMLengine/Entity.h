@@ -1,6 +1,5 @@
 #pragma once
 #include"ComponentStorage.h"
-#include"Game.h"
 class Entity
 {
 private:
@@ -15,8 +14,11 @@ public:
 		return this->storage.get_component<T>();
 	}
 
-	void logic();
+	void logic() {
 
-	friend class Game;
+		get<BPhysComponent*>()->gravity(pos);
+		get<ShapeComponent*>()->set(pos);
+	}
+
 };
 

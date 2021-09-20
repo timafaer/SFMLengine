@@ -27,7 +27,45 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DrawComponent.h">
+      <Filter>Файлы заголовков\components\comps\draw</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Файлы заголовков\components</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveComponent.h">
+      <Filter>Файлы заголовков\components\comps</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureComponent.h">
+      <Filter>Файлы заголовков\components\comps\draw</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexComponent.h">
+      <Filter>Файлы заголовков\components\comps\draw</Filter>
+    </ClInclude>
+    <ClInclude Include="ShapeComponent.h">
+      <Filter>Файлы заголовков\components\comps\draw</Filter>
+    </ClInclude>
+    <ClInclude Include="setter.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentStorage.h">
+      <Filter>Файлы заголовков\components</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>Файлы заголовков\components\comps</Filter>
+    </ClInclude>
+    <ClInclude Include="ColissionsComponent.h">
+      <Filter>Файлы заголовков\components\comps</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Entity.cpp">
@@ -36,49 +74,5 @@
     <ClCompile Include="Colissions.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Component.h">
-      <Filter>Файлы заголовков\components\comps</Filter>
-    </ClInclude>
-    <ClInclude Include="ComponentStorage.h">
-      <Filter>Файлы заголовков\components</Filter>
-    </ClInclude>
-    <ClInclude Include="setter.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Entity.h">
-      <Filter>Файлы заголовков\components</Filter>
-    </ClInclude>
-    <ClInclude Include="MoveComponent.h">
-      <Filter>Файлы заголовков\components\comps</Filter>
-    </ClInclude>
-    <ClInclude Include="ColissionsComponent.h">
-      <Filter>Файлы заголовков\components\comps</Filter>
-    </ClInclude>
-    <ClInclude Include="Colissions.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="TextureComponent.h">
-      <Filter>Файлы заголовков\components\comps\draw</Filter>
-    </ClInclude>
-    <ClInclude Include="DrawComponent.h">
-      <Filter>Файлы заголовков\components\comps\draw</Filter>
-    </ClInclude>
-    <ClInclude Include="VertexComponent.h">
-      <Filter>Файлы заголовков\components\comps\draw</Filter>
-    </ClInclude>
-    <ClInclude Include="BPhusComponent.h">
-      <Filter>Файлы заголовков\components\comps</Filter>
-    </ClInclude>
-    <ClInclude Include="ShapeComponent.h">
-      <Filter>Файлы заголовков\components\comps\draw</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

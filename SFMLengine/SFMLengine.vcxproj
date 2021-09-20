@@ -146,14 +146,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Colissions.cpp" />
-    <ClCompile Include="Entity.cpp" />
-    <ClCompile Include="Game.cpp" />
-    <ClCompile Include="main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="BPhusComponent.h" />
-    <ClInclude Include="Colissions.h" />
     <ClInclude Include="ColissionsComponent.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="ComponentStorage.h" />
@@ -165,6 +157,12 @@
     <ClInclude Include="ShapeComponent.h" />
     <ClInclude Include="TextureComponent.h" />
     <ClInclude Include="VertexComponent.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Colissions.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

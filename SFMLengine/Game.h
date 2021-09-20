@@ -19,5 +19,7 @@ public:
 	void draw();
 
 	void even();
+
+	void logic();
 };
 

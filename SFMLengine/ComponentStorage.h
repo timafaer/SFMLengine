@@ -3,6 +3,8 @@
 #include"DrawComponent.h"
 #include"TextureComponent.h"
 #include"VertexComponent.h"
+#include"BPhusComponent.h"
+#include"ShapeComponent.h"
 #include<vector>
 
 
@@ -23,6 +25,10 @@ public:
 
 		case Type::vertexComponent: components.push_back(new VertexComponent()); break;
 
+		case Type::bphysComponent:components.push_back(new BPhysComponent()); break;
+
+		case Type::shapeComponent:components.push_back(new ShapeComponent()); break;
+
 		default:
 			break;
 		}
@@ -37,6 +43,8 @@ public:
 		else if (typeid(T) == typeid(DrawComponent*)) type = Type::drawComponent;
 		else if (typeid(T) == typeid(TextureComponent*)) type = Type::textureComponent;
 		else if (typeid(T) == typeid(VertexComponent*)) type = Type::vertexComponent;
+		else if (typeid(T) == typeid(BPhysComponent*)) type = Type::bphysComponent;
+		else if (typeid(T) == typeid(ShapeComponent*)) type = Type::shapeComponent;
 
 
 	for (int i = 0; i < components.size(); i++) {

@@ -4,25 +4,15 @@ Game::Game()
 {
 	texture.loadFromFile("texture.jpg");
 	add_entity();
-	add_entity();
-	entities[0].add_component(Type::vertexComponent);
+	
+	entities[0].add_component(Type::shapeComponent);
 	entities[0].add_component(Type::drawComponent);
+	entities[0].add_component(Type::bphysComponent);
 
-	entities[1].add_component(Type::vertexComponent);
-	entities[1].add_component(Type::drawComponent);
+	entities[0].get<ShapeComponent*>()->set(entities[0].pos);
+	entities[0].get<DrawComponent*>()->set(&entities[0].get<ShapeComponent*>()->shape);
+	entities[0].get<BPhysComponent*>()->set_center(sf::Vector2i(100, 100));
 
-	sf::Vector2f pos[2] = { sf::Vector2f(100, 100), sf::Vector2f(150, 110) };
-
-	entities[0].get<VertexComponent*>()->set(sf::Lines,pos);
-	entities[0].get<DrawComponent*>()->set(&entities[0].get<VertexComponent*>()->vertex);
-
-	pos[1] = sf::Vector2f(90, 150);
-
-
-	entities[1].get<VertexComponent*>()->set(sf::Lines, pos);
-	entities[1].get<DrawComponent*>()->set(&entities[1].get<VertexComponent*>()->vertex);
-	window.create(sf::VideoMode(500, 500), "SFML works!");
-	window.setFramerateLimit(60);
 }
 
 void Game::add_entity()
@@ -34,6 +24,7 @@ void Game::main_loop()
 {
 	while (window.isOpen()) {
 		even();
+		logic();
 		draw();
 
 	}
@@ -42,13 +33,24 @@ void Game::main_loop()
 void Game::draw()
 {
 	window.clear();
-	for (auto i : entities)
+	for (auto& i : entities)
 		window.draw(*i.get<DrawComponent*>());
 	window.display();
 }
 
 void Game::even(){
-	while (window.pollEvent(this->event))
+	while (window.pollEvent(this->event)) {
 		if (event.type == sf::Event::Closed)
 			window.close();
+		if (event.type == sf::Event::MouseMoved)
+			entities[0].get<BPhysComponent*>()->set_center(sf::Mouse::getPosition());
+	}
 }
+
+void Game::logic()
+{
+	for (auto& entity : entities) {
+		entity.logic();
+	}
+}
+	

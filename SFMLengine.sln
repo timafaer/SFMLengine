@@ -5,6 +5,43 @@ VisualStudioVersion = 17.0.31612.314
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SFMLengine", "SFMLengine\SFMLengine.vcxproj", "{53E6BA49-B99C-43D6-9B0B-C0C3FFF05993}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "headers", "headers", "{4C77D8CB-CC1D-4B18-9964-EE43EC30ABA1}"
+	ProjectSection(SolutionItems) = preProject
+		SFMLengine\Colissions.h = SFMLengine\Colissions.h
+		SFMLengine\Game.h = SFMLengine\Game.h
+		SFMLengine\setter.h = SFMLengine\setter.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Components", "Components", "{8BE702EA-86CC-4B62-9550-BFF244094BAD}"
+	ProjectSection(SolutionItems) = preProject
+		SFMLengine\ComponentStorage.h = SFMLengine\ComponentStorage.h
+		SFMLengine\Entity.h = SFMLengine\Entity.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Comps", "Comps", "{A5DCAFA9-6428-43FA-B80A-0B3843534FD3}"
+	ProjectSection(SolutionItems) = preProject
+		SFMLengine\BPhusComponent.h = SFMLengine\BPhusComponent.h
+		SFMLengine\ColissionsComponent.h = SFMLengine\ColissionsComponent.h
+		SFMLengine\Component.h = SFMLengine\Component.h
+		SFMLengine\MoveComponent.h = SFMLengine\MoveComponent.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Draw", "Draw", "{D9DB44FC-03E5-4DF7-8F42-784A4C70A958}"
+	ProjectSection(SolutionItems) = preProject
+		SFMLengine\DrawComponent.h = SFMLengine\DrawComponent.h
+		SFMLengine\ShapeComponent.h = SFMLengine\ShapeComponent.h
+		SFMLengine\TextureComponent.h = SFMLengine\TextureComponent.h
+		SFMLengine\VertexComponent.h = SFMLengine\VertexComponent.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cpp", "Cpp", "{4922787E-7A7F-42EB-9249-11631A61199E}"
+	ProjectSection(SolutionItems) = preProject
+		SFMLengine\Colissions.cpp = SFMLengine\Colissions.cpp
+		SFMLengine\Entity.cpp = SFMLengine\Entity.cpp
+		SFMLengine\Game.cpp = SFMLengine\Game.cpp
+		SFMLengine\main.cpp = SFMLengine\main.cpp
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -24,6 +61,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8BE702EA-86CC-4B62-9550-BFF244094BAD} = {4C77D8CB-CC1D-4B18-9964-EE43EC30ABA1}
+		{A5DCAFA9-6428-43FA-B80A-0B3843534FD3} = {8BE702EA-86CC-4B62-9550-BFF244094BAD}
+		{D9DB44FC-03E5-4DF7-8F42-784A4C70A958} = {A5DCAFA9-6428-43FA-B80A-0B3843534FD3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {435352F2-A8B3-472B-9BDB-FF9354B88250}

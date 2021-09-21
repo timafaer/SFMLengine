@@ -10,6 +10,9 @@ private:
 	sf::Texture texture;
 	sf::Event event;
 
+	sf::Time elapsed;
+	sf::Clock clock;
+
 public:
 
 	Game();

@@ -8,7 +8,8 @@ enum class Type
 	vertexComponent,
 	bphysComponent,
 	shapeComponent,
-	moveComponent
+	moveComponent,
+	colissionComponent
 };
 
 class Component

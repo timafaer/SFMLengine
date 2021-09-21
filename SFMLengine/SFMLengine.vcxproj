@@ -146,6 +146,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BPhusComponent.h" />
     <ClInclude Include="ColissionsComponent.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="ComponentStorage.h" />

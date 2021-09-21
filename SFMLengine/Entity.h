@@ -4,9 +4,10 @@ class Entity
 {
 private:
 	ComponentStorage storage;
-	sf::Vector2f pos;
+	
 
 public:
+	sf::Vector2f pos;//временно
 	void add_component(Type type) { storage.add_component(type); }
 
 	template<typename T>
@@ -14,9 +15,9 @@ public:
 		return this->storage.get_component<T>();
 	}
 
-	void logic() {
+	void logic(sf::Time elapsed) {
 
-		get<BPhysComponent*>()->gravity(pos);
+		get<BPhysComponent*>()->gravity(pos,elapsed);
 		get<ShapeComponent*>()->set(pos);
 	}
 

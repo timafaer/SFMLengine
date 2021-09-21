@@ -60,6 +60,9 @@
     <ClInclude Include="ColissionsComponent.h">
       <Filter>Файлы заголовков\components\comps</Filter>
     </ClInclude>
+    <ClInclude Include="BPhusComponent.h">
+      <Filter>Файлы заголовков\components\comps</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

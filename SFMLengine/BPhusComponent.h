@@ -17,13 +17,17 @@ public:
 			c = -c;
 		float sin = (center.y - pos.y) / c;
 		float cos = (center.x - pos.x) / c;
-		speed.x += g * cos;
-		speed.y += g * sin;
+		speed.x += g * cos;// pow(c, 2);
+		speed.y += g * sin;// pow(c, 2);
 		pos += speed;//sf::Vector2f(speed.x * elapsed.asSeconds(), speed.y * elapsed.asSeconds());
 	}
 
-	 virtual void collis(sf::Vector2f& pos,sf::Vector2f al_speed,sf::Time elapsed,float mas=1) {
-		 speed -= al_speed * mas;
+	 virtual void collis(sf::Vector2f& pos,sf::Vector2f& al_speed,sf::Vector2f& al_pos,sf::Time elapsed,float mas=1) {
+		 sf::Vector2f tmp = speed;
+		// pos -= speed;
+		 speed = al_speed * mas;
+		 //al_pos -=al_speed;
+		 al_speed = tmp / mas;
 	 }
 
 	void set(){}

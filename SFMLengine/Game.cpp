@@ -62,8 +62,8 @@ void Game::even(){
 
 void Game::logic()
 {
-	if (entities[0].get<ColissionsComponent*>()->check(entities[0].pos, entities[1].pos))
-		entities[0].get<BPhysComponent*>()->collis(entities[0].pos, entities[1].get<BPhysComponent*>()->speed,clock.getElapsedTime());
+	if (entities[0].get<ColissionsComponent*>()->check(entities[0].pos, entities[1].pos,entities[0].get<BPhysComponent*>()->speed,entities[1].get<BPhysComponent*>()->speed))
+		entities[0].get<BPhysComponent*>()->collis(entities[0].pos, entities[1].get<BPhysComponent*>()->speed, entities[1].pos,clock.getElapsedTime());
 
 	///if (entities[1].get<ColissionsComponent*>()->check(entities[1].pos, entities[0].pos))
 		//entities[1].get<BPhysComponent*>()->collis(entities[1].pos, entities[0].get<BPhysComponent*>()->speed,clock.getElapsedTime());

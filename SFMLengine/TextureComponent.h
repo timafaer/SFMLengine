@@ -8,8 +8,8 @@ protected:
 public:
 	sf::Sprite sprite;	
 	//TextureComponent(){}	
-	Type type() { return Type::textureComponent; }
-	void set(sf::Texture* texture) { this->texture = texture; sprite.setTexture(*this->texture);  }
+	virtual Type type() { return Type::textureComponent; }
+	virtual void set(sf::Texture* texture) { this->texture = texture; sprite.setTexture(*this->texture);  }
 
 	//void move(sf::Vector2f move) { pos += move; sprite.move(move); }
 	//void set_pos(sf::Vector2f pos) { this->pos = pos; sprite.setPosition(pos); }

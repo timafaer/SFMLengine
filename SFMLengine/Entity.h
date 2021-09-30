@@ -15,10 +15,13 @@ public:
 		return this->storage.get_component<T>();
 	}
 
-	void logic(sf::Time elapsed) {
+	void logic() {
 
-		get<BPhysComponent*>()->gravity(pos,elapsed);
-		get<ShapeComponent*>()->set(pos);
+		//get<BPhysComponent*>()->gravity(pos,elapsed);
+		//get<ShapeComponent*>()->set(pos);
+		if (get<AnimationComonent*>() != NULL) {
+			get<AnimationComonent*>()->shange();
+		}
 	}
 
 };

@@ -2,6 +2,7 @@
 #include"Entity.h"
 #include<vector>
 #include<iostream>
+#include"map.h"
 class Game
 {
 private:
@@ -10,6 +11,7 @@ private:
 	sf::Texture texture;
 	sf::Event event;
 
+	Map map;
 	sf::Time elapsed;
 	sf::Clock clock;
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -146,6 +146,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AnimationComponent.h" />
     <ClInclude Include="BPhusComponent.h" />
     <ClInclude Include="ColissionsComponent.h" />
     <ClInclude Include="Component.h" />
@@ -153,17 +154,21 @@
     <ClInclude Include="DrawComponent.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="map.h" />
     <ClInclude Include="MoveComponent.h" />
     <ClInclude Include="setter.h" />
     <ClInclude Include="ShapeComponent.h" />
     <ClInclude Include="TextureComponent.h" />
     <ClInclude Include="VertexComponent.h" />
+    <ClInclude Include="WallTypesStorage.h" />
+    <ClInclude Include="wall_types.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Colissions.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="map.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

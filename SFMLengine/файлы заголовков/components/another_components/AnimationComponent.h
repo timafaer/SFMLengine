@@ -1,6 +1,6 @@
 #pragma once
 #include"../файлы заголовков\Component.h"
-#include"../файлы заголовков\components\draw_components\TextureComponent.h"
+#include"../draw_components\TextureComponent.h"
 
 class AnimationComonent :public TextureComponent
 {

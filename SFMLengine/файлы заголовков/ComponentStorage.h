@@ -1,13 +1,13 @@
 #pragma once
 #include"Component.h"
-#include"../файлы заголовков\components\draw_components\DrawComponent.h"
-#include"../файлы заголовков\components\draw_components\TextureComponent.h"
-#include"../файлы заголовков\components\draw_components\VertexComponent.h"
-#include"../файлы заголовков\components\another_components\BPhusComponent.h"
-#include"../файлы заголовков\components\draw_components\ShapeComponent.h"
+#include".\components\draw_components\DrawComponent.h"
+#include".\components\draw_components\TextureComponent.h"
+#include".\components\draw_components\VertexComponent.h"
+#include".\components\another_components\BPhusComponent.h"
+#include".\components\draw_components\ShapeComponent.h"
 #include<vector>
-#include"../файлы заголовков\components\another_components\ColissionsComponent.h"
-#include"../файлы заголовков\components\another_components\AnimationComponent.h"
+#include".\components\another_components\ColissionsComponent.h"
+#include".\components\another_components\AnimationComponent.h"
 
 
 class ComponentStorage

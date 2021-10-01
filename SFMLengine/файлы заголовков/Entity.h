@@ -17,8 +17,8 @@ public:
 
 	void logic() {
 
-		//get<BPhysComponent*>()->gravity(pos,elapsed);
-		//get<ShapeComponent*>()->set(pos);
+		get<BPhysComponent*>()->gravity(pos);
+		get<ShapeComponent*>()->set(pos);
 		if (get<AnimationComonent*>() != NULL) {
 			get<AnimationComonent*>()->shange();
 		}

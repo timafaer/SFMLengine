@@ -1,5 +1,5 @@
 #pragma once
-#include"Component.h"
+#include"../файлы заголовков\Component.h"
 #include<SFML/Graphics.hpp>
 #include<vector>
 #include<cmath>

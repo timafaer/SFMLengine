@@ -146,29 +146,28 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AnimationComponent.h" />
-    <ClInclude Include="BPhusComponent.h" />
-    <ClInclude Include="ColissionsComponent.h" />
-    <ClInclude Include="Component.h" />
-    <ClInclude Include="ComponentStorage.h" />
-    <ClInclude Include="DrawComponent.h" />
-    <ClInclude Include="Entity.h" />
-    <ClInclude Include="Game.h" />
-    <ClInclude Include="map.h" />
-    <ClInclude Include="MoveComponent.h" />
-    <ClInclude Include="setter.h" />
-    <ClInclude Include="ShapeComponent.h" />
-    <ClInclude Include="TextureComponent.h" />
-    <ClInclude Include="VertexComponent.h" />
-    <ClInclude Include="WallTypesStorage.h" />
-    <ClInclude Include="wall_types.h" />
+    <ClCompile Include="исходные файлы\Game.cpp" />
+    <ClCompile Include="исходные файлы\main.cpp" />
+    <ClCompile Include="исходные файлы\map.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Colissions.cpp" />
-    <ClCompile Include="Entity.cpp" />
-    <ClCompile Include="Game.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="map.cpp" />
+    <ClInclude Include="файлы заголовков\Component.h" />
+    <ClInclude Include="файлы заголовков\ComponentStorage.h" />
+    <ClInclude Include="файлы заголовков\components\another_components\AnimationComponent.h" />
+    <ClInclude Include="файлы заголовков\components\another_components\BPhusComponent.h" />
+    <ClInclude Include="файлы заголовков\components\another_components\Colissions.h" />
+    <ClInclude Include="файлы заголовков\components\another_components\ColissionsComponent.h" />
+    <ClInclude Include="файлы заголовков\components\another_components\MoveComponent.h" />
+    <ClInclude Include="файлы заголовков\components\draw_components\DrawComponent.h" />
+    <ClInclude Include="файлы заголовков\components\draw_components\ShapeComponent.h" />
+    <ClInclude Include="файлы заголовков\components\draw_components\TextureComponent.h" />
+    <ClInclude Include="файлы заголовков\components\draw_components\VertexComponent.h" />
+    <ClInclude Include="файлы заголовков\Entity.h" />
+    <ClInclude Include="файлы заголовков\Game.h" />
+    <ClInclude Include="файлы заголовков\map.h" />
+    <ClInclude Include="файлы заголовков\setter.h" />
+    <ClInclude Include="файлы заголовков\WallTypesStorage.h" />
+    <ClInclude Include="файлы заголовков\wall_types.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

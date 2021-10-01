@@ -1,5 +1,5 @@
 #pragma once
-#include"MoveComponent.h"
+#include "../файлы заголовков\Component.h"
 
 class TextureComponent :public Component
 {

@@ -23,7 +23,7 @@ class Map : public sf::Drawable,public sf::Transformable
 public:
 
 	Map() {
-		m.loadFromFile("texture.jpg");
+		m.loadFromFile(R"(./textures\texture.jpg)");
 		random();
 	}
 

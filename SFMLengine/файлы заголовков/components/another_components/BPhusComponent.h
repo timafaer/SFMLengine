@@ -1,5 +1,5 @@
 #pragma once
-#include"Component.h"
+#include"../файлы заголовков\Component.h"
 #include<cmath>
 class BPhysComponent :public Component
 {
@@ -10,7 +10,7 @@ public:
 	 sf::Vector2f speed = sf::Vector2f(0, 0);//временно
 	 virtual void set_center(sf::Vector2i center) { this->center = center; }
 
-	 virtual void gravity(sf::Vector2f& pos,sf::Time elapsed) {
+	 virtual void gravity(sf::Vector2f& pos) {
 		
 		float c = sqrt(pow(center.x - pos.x, 2) + pow(center.y - pos.y, 2));
 		if (pow(center.x - pos.x, 2) + pow(center.y - pos.y, 2) < 0) 		

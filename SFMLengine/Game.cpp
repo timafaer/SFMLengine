@@ -11,7 +11,7 @@ Game::Game()
 	sf::IntRect tex[2] = { {0,0,60,60},{60,60,60,60} };
 	entities[0].get<AnimationComonent*>()->set(tex,2, &texture,400);
 	*/
-	window.create(sf::VideoMode(500, 500), "SFML works!");
+	window.create(sf::VideoMode(700, 700), "SFML works!");
 	window.setFramerateLimit(60);
 }
 
@@ -26,7 +26,7 @@ void Game::main_loop()
 		
 		even();
 		//logic();
-		std::cout << clock.getElapsedTime().asMicroseconds() << std::endl;
+		//std::cout << clock.getElapsedTime().asMicroseconds() << std::endl;
 		draw();
 	}
 }

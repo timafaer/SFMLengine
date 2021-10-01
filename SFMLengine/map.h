@@ -1,13 +1,15 @@
 #pragma once
-
+#include<iostream>
 #include<SFML/Graphics.hpp>
 #include"Entity.h"
 #include"wall_types.h"
 #include<fstream>
 #include<random>
+#include<ctime>
 enum  Mtype {
 	background = 0,
-	wall_type1 = 1
+	wall_type1 = 1,
+	barel = 2
 };
 
 class Map : public sf::Drawable,public sf::Transformable

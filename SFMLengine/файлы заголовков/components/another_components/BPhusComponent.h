@@ -19,17 +19,32 @@ public:
 		float cos = (center.x - pos.x) / c;
 		speed.x += g * cos;// pow(c, 2);
 		speed.y += g * sin;// pow(c, 2);
-		pos += speed;//sf::Vector2f(speed.x * elapsed.asSeconds(), speed.y * elapsed.asSeconds());
+		//sf::Vector2f(speed.x * elapsed.asSeconds(), speed.y * elapsed.asSeconds());
 	}
 
-	 virtual void collis(sf::Vector2f& pos,sf::Vector2f& al_speed,sf::Vector2f& al_pos,sf::Time elapsed,float mas=1) {
-		 sf::Vector2f tmp = speed;
-		// pos -= speed;
-		 speed = al_speed * mas;
-		 //al_pos -=al_speed;
-		 al_speed = tmp / mas;
+	 virtual void collis(sf::Vector2f& pos,sf::Vector2f& al_speed,float mas=1) {
+
+		 int x = pos.x / 60;
+		 int y = (pos.y - 20) / 60;
+		 pos -= speed;
+
+		 int x2 = pos.x / 60;
+		 int y2 = (pos.y - 20) / 60;
+
+		 if (abs(x - x2) == 1 )
+			 speed.x = 0;
+		 if (abs(y - y2) ==1)
+			 speed.y = 0;
+
+
+		
+
+
 	 }
 
+	 void move(sf::Vector2f& pos) {
+		 pos += speed;
+	 }
 	void set(){}
 	Type type() { return Type::bphysComponent; }
 

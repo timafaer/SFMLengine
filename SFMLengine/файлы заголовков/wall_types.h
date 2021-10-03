@@ -7,10 +7,12 @@ protected:
 	bool dest = false;
 	sf::Texture* textur;
 	sf::IntRect rect;
+	bool back = true;
 public:
-	Wall_types(sf::Texture* texture, sf::IntRect rect = sf::IntRect(0, 0, 60, 60)) {
+	Wall_types(sf::Texture* texture, sf::IntRect rect = sf::IntRect(0, 0, 60, 60),bool b = true) {
 		this->textur = texture;
 		this->rect = rect;
+		back = b;
 	}
 	void destruct() { dest = !dest; }
 	void set_rect(sf::IntRect rect) { this->rect = rect; }

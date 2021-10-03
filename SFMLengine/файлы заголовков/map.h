@@ -15,11 +15,13 @@ enum  Mtype {
 class Map : public sf::Drawable,public sf::Transformable
 {
 	std::vector<bool> map;
-	std::vector<Wall_types*> walls;
+	std::vector<Wall_types*> back;
+	
 	std::vector<Mtype> type;
-	sf::VertexArray m_vertices;
+	sf::VertexArray m_vertices,m_walls;
 	unsigned size_x, size_y;
 	sf::Texture m;
+	sf::Drawable* drow = &m_vertices;
 public:
 
 	Map() {
@@ -28,8 +30,16 @@ public:
 	}
 
 	void set(std::string filename,unsigned x,unsigned y);
+	
+	void shange(){
+		if (drow == &m_vertices)
+			drow = &m_walls;
+		else
+			drow = &m_vertices;
+	}
 
 	void random();
+	bool collisions(sf::Vector2f pos);
 private:
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const {
 
@@ -39,11 +49,11 @@ private:
 		states.texture = &m;
 
 	// draw the vertex array
-		target.draw(m_vertices, states);
-
+		target.draw(*drow, states);
+		
 	}
 
-	//bool collisions(sf::Vector2f pos);
+	
 
 
 };

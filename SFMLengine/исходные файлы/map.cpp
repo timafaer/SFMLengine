@@ -1,4 +1,20 @@
 #include "../файлы заголовков\map.h"
+
+
+static void help(sf::Vertex*& quad, sf::IntRect int_rect, int i, int j, int max, int a) {
+
+	quad[0].position = sf::Vector2f(i * a + (a - int_rect.width), j * a + (a - int_rect.height) + max);
+	quad[1].position = sf::Vector2f((i + 1) * a, j * a + (a - int_rect.height) + max);
+	quad[2].position = sf::Vector2f((i + 1) * a, (j + 1) * a + max);
+	quad[3].position = sf::Vector2f(i * a + (a - int_rect.width), (j + 1) * a + max);
+
+
+	quad[0].texCoords = sf::Vector2f(int_rect.left, int_rect.top);
+	quad[1].texCoords = sf::Vector2f(int_rect.left + int_rect.width, int_rect.top);
+	quad[2].texCoords = sf::Vector2f(int_rect.left + int_rect.width, int_rect.top + int_rect.height);
+	quad[3].texCoords = sf::Vector2f(int_rect.left, int_rect.top + int_rect.height);
+}
+
 void Map::set(std::string filename,unsigned x,unsigned y) {
 	size_x = x;
 	size_y = y;
@@ -14,35 +30,28 @@ void Map::set(std::string filename,unsigned x,unsigned y) {
 			type.push_back((Mtype)(s));
 			switch (s)
 			{
-			case 0:walls.push_back(new Wall_types(&m)); break;
-			case 1:walls.push_back(new Wall_types(&m, sf::IntRect(60, 0, 60, 60))); break;
-			case 2:walls.push_back(new Wall_types(&m, sf::IntRect(60, 60, 60, 80))); break;
+			case 0:back.push_back(new Wall_types(&m)); break;
+			case 1:back.push_back(new Wall_types(&m, sf::IntRect(60, 0, 60, 60))); break;
+			case 2:back.push_back(new Wall_types(&m, sf::IntRect(60, 60, 60, 80))); break;
 			default:
 				break;
 			}
-			m_vertices.setPrimitiveType(sf::Quads);
-			m_vertices.resize(size_x * size_y * 4);
-			sf::Vertex* quad = &m_vertices[(i + j * size_x) * 4];
 
-			auto int_rect = walls[walls.size() - 1]->get_intrect();
+			if (type[type.size() - 1] != Mtype::barel) {
+				m_vertices.setPrimitiveType(sf::Quads);
+				m_vertices.resize(size_x * size_y * 4);
+				sf::Vertex* quad = &m_vertices[(i + j * size_x) * 4];
 
-			quad[0].position = sf::Vector2f(i * a + (a - int_rect.width), j * a + (a - int_rect.height) + max);
-			quad[1].position = sf::Vector2f((i + 1) * a, j * a + (a - int_rect.height) + max);
-			quad[2].position = sf::Vector2f((i + 1) * a, (j + 1) * a + max);
-			quad[3].position = sf::Vector2f(i * a + (a - int_rect.width), (j + 1) * a + max);
+				auto int_rect = back[back.size() - 1]->get_intrect();
 
-
-			quad[0].texCoords = sf::Vector2f(int_rect.left, int_rect.top);
-			quad[1].texCoords = sf::Vector2f(int_rect.left + int_rect.width, int_rect.top);
-			quad[2].texCoords = sf::Vector2f(int_rect.left + int_rect.width, int_rect.top + int_rect.height);
-			quad[3].texCoords = sf::Vector2f(int_rect.left, int_rect.top + int_rect.height);
-
+				help(quad, int_rect, i, j, max, a);
+			}
 		}
+		fin.close();
+
 	}
-	fin.close();
-
-
 }
+
 
 void Map::random()
 {
@@ -52,6 +61,11 @@ void Map::random()
 	srand(time(0));
 	size_x = 8;
 	size_y = 8;
+	m_vertices.setPrimitiveType(sf::Quads);
+	m_vertices.resize(size_x * size_y * 4);
+
+	m_walls.setPrimitiveType(sf::Quads);
+	m_walls.resize(size_x * size_y * 4);
 	unsigned s;
 	for (unsigned int i = 0; i < size_x; ++i) {
 		for (unsigned int j = 0; j < size_y; ++j) {
@@ -60,31 +74,41 @@ void Map::random()
 			type.push_back((Mtype)(s));
 			switch (s)
 			{
-			case 0:walls.push_back(new Wall_types(&m)); break;
-			case 1:walls.push_back(new Wall_types(&m, sf::IntRect(60, 0, 60, 60))); break;
-			case 2:walls.push_back(new Wall_types(&m,sf::IntRect(60,60,60,80))); break;
+			case 0:back.push_back(new Wall_types(&m)); break;
+			case 1:back.push_back(new Wall_types(&m, sf::IntRect(60, 0, 60, 60))); break;
+			case 2:back.push_back(new Wall_types(&m,sf::IntRect(60,60,60,80),false)); break;
 			default: 
 				break;
 			}
-			m_vertices.setPrimitiveType(sf::Quads);
-			m_vertices.resize(size_x * size_y * 4);
-			sf::Vertex* quad = &m_vertices[(i + j * size_x) * 4];
-
-			auto int_rect = walls[walls.size() - 1]->get_intrect();
-
-			quad[0].position = sf::Vector2f(i * a + (a - int_rect.width), j * a + (a - int_rect.height) + max);
-			quad[1].position = sf::Vector2f((i + 1) * a, j * a + (a - int_rect.height) + max);
-			quad[2].position = sf::Vector2f((i + 1) * a, (j + 1) * a + max);
-			quad[3].position = sf::Vector2f(i * a + (a - int_rect.width), (j + 1) * a + max);
+			if (type[type.size() - 1] == Mtype::barel) {
 			
-			
-			quad[0].texCoords = sf::Vector2f(int_rect.left, int_rect.top);
-			quad[1].texCoords = sf::Vector2f(int_rect.left + int_rect.width, int_rect.top);
-			quad[2].texCoords = sf::Vector2f(int_rect.left + int_rect.width, int_rect.top + int_rect.height);
-			quad[3].texCoords = sf::Vector2f(int_rect.left, int_rect.top + int_rect.height);
+				sf::Vertex* quad = &m_walls [(i + j * size_x) * 4] ;
+				auto int_rect = back[back.size() - 1]->get_intrect();
 
+				help(quad, int_rect, i, j, max, a);
 
+			}
+			else {
+				sf::Vertex* quad = &m_vertices[(i + j * size_x) * 4];
+				auto int_rect = back[back.size() - 1]->get_intrect();
+
+				help(quad, int_rect, i, j, max, a);
+			}
 		}
 	}
 
+}
+
+bool Map::collisions(sf::Vector2f pos)
+{
+
+	int size_x =pos.x / 60;
+	int size_y = (pos.y - 20) / 60;
+	std::cout << size_x << " " << size_y << std::endl;
+	if (size_x < 0 || size_x>7 || size_y < 0 || size_y>7)
+		return true;
+	else if (Mtype::barel == type[size_x * 8 + size_y])
+		return true;
+
+	return false;
 }

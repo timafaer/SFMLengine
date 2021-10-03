@@ -35,6 +35,10 @@ void Game::draw()
 	window.clear();
 
 	window.draw(map);
+	map.shange();
+	window.draw(map);
+	map.shange();
+
 	for (auto& i : entities)
 		window.draw(*i.get<DrawComponent*>());
 	window.display();
@@ -53,6 +57,11 @@ void Game::even()
 
 void Game::logic()
 {
+	sf::Vector2f a = sf::Vector2f(0, 0);
 	entities[0].logic();
+	if (map.collisions(entities[0].pos)) {
+		entities[0].get<BPhysComponent*>()->collis(entities[0].pos,a);
+	}
+	entities[0].get<BPhysComponent*>()->move(entities[0].pos);
 }
 	

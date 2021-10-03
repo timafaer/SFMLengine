@@ -13,16 +13,16 @@
 также имеются компонеты:
 -------------------
 enum class Type
-{
-	component ,
-	drawComponent,
-	textureComponent,
-	vertexComponent,
-	bphysComponent,
-	shapeComponent,
-	colissionComponent,
-	animationComponent
-};
+{  
+	        component,  
+	        drawComponent,  
+	        textureComponent,  
+	        vertexComponent,  
+	        bphysComponent,  
+	        shapeComponent,  
+	        colissionComponent,  
+	        animationComponent  
+}
 ---------------------
 интуитивно понятно что за что отвечает
 
@@ -35,3 +35,4 @@ enum class Type
 чтобы добавить компонент надо создать класс и добавить родителя (class MyComponent: public Component),добавить в enum и прописать сценарии в ComponentStorage
 
 пока что на этом все
+

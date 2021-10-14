@@ -22,23 +22,12 @@ public:
 		//sf::Vector2f(speed.x * elapsed.asSeconds(), speed.y * elapsed.asSeconds());
 	}
 
-	 virtual void collis(sf::Vector2f& pos,sf::Vector2f& al_speed,float mas=1) {
-
-		 int x = pos.x / 60;
-		 int y = (pos.y - 20) / 60;
-		 pos -= speed;
-
-		 int x2 = pos.x / 60;
-		 int y2 = (pos.y - 20) / 60;
-
-		 if (abs(x - x2) == 1 )
-			 speed.x = 0;
-		 if (abs(y - y2) ==1)
-			 speed.y = 0;
-
-
+	 virtual void collis(sf::Vector2f& pos,sf::IntRect crash,float mas=1) {
+		 if (crash == sf::IntRect(0,0,0,0))
+			 return;
+		 int rect = 4;
 		
-
+		 
 
 	 }
 

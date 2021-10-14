@@ -6,6 +6,7 @@
 #include<fstream>
 #include<random>
 #include<ctime>
+#include<algorithm>
 enum  Mtype {
 	background = 0,
 	wall_type1 = 1,
@@ -39,7 +40,28 @@ public:
 	}
 
 	void random();
-	bool collisions(sf::Vector2f pos);
+
+
+	sf::Vector2f collisions(sf::Vector2f pos,sf::Vector2f speed);
+
+	inline int area(sf::Vector2f a, sf::Vector2f b, sf::Vector2f c) {
+		return (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x);
+	}
+	inline bool intersect_1(int a, int b, int c, int d) {
+		if (a > b)  std::swap(a, b);
+		if (c > d)  std::swap(c, d);
+		return std::max(a, c) <= std::min(b, d);
+	}
+	bool intersect(sf::Vector2f a, sf::Vector2f b, sf::Vector2f c, sf::Vector2f d) {
+		return intersect_1(a.x, b.x, c.x, d.x)
+			&& intersect_1(a.y, b.y, c.y, d.y)
+			&& area(a, b, c) * area(a, b, d) <= 0
+			&& area(c, d, a) * area(c, d, b) <= 0;
+	}
+
+	bool check_tail(sf::Vector2f speed, sf::Vector2f pos, int x, int y);
+
+
 private:
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const {
 

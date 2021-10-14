@@ -7,7 +7,7 @@ private:
 	
 
 public:
-	sf::Vector2f pos;//временно
+	sf::Vector2f pos = sf::Vector2f(100, 100);//временно
 	void add_component(Type type) { storage.add_component(type); }
 
 	template<typename T>

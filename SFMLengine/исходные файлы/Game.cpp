@@ -59,9 +59,9 @@ void Game::logic()
 {
 	sf::Vector2f a = sf::Vector2f(0, 0);
 	entities[0].logic();
-	if (map.collisions(entities[0].pos)) {
-		entities[0].get<BPhysComponent*>()->collis(entities[0].pos,a);
-	}
+
+	entities[0].get<BPhysComponent*>()->speed = map.collisions(entities[0].pos, entities[0].get<BPhysComponent*>()->speed);
+
 	entities[0].get<BPhysComponent*>()->move(entities[0].pos);
 }
 	

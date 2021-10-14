@@ -105,10 +105,10 @@ sf::Vector2f Map::collisions(sf::Vector2f pos,sf::Vector2f speed)
 	int size_x =pos.x / 60;
 	int size_y = (pos.y - 20) / 60;
 	std::cout << size_x << " " << size_y << std::endl;
-	(size_x < 0 || size_x > 8) ? size_x < 0 ? speed.x = 0.1 : speed.x = -0.1 : check_tail(speed, pos, size_x -1, size_y) ? speed.x = 0 : NULL;
-	(size_x < 0 || size_x > 8) ? size_x < 0 ? speed.x = 0.1 : speed.x = -0.1 : check_tail(speed, pos, size_x + 1, size_y) ? speed.x = 0 : NULL;
-	(size_y < 0 || size_y > 8) ? size_y < 0 ? speed.y = 0.1 : speed.y = -0.1 : check_tail(speed, pos, size_x, size_y -1) ? speed.y = 0 : NULL;
-	(size_y < 0 || size_y > 8) ? size_y < 0 ? speed.y = 0.1 : speed.y = -0.1 : check_tail(speed, pos, size_x, size_y + 1) ? speed.y = 0 : NULL;
+	(size_x < 0 || size_x > 7) ? size_x < 0 ? speed.x = 0.1 : speed.x = -0.1 : check_tail(speed, pos, size_x -1, size_y) ? speed.x = 0 : NULL;
+	(size_x < 0 || size_x > 7) ? size_x < 0 ? speed.x = 0.1 : speed.x = -0.1 : check_tail(speed, pos, size_x + 1, size_y) ? speed.x = 0 : NULL;
+	(size_y < 0 || size_y > 7) ? size_y < 0 ? speed.y = 0.1 : speed.y = -0.1 : check_tail(speed, pos, size_x, size_y -1) ? speed.y = 0 : NULL;
+	(size_y < 0 || size_y > 7) ? size_y < 0 ? speed.y = 0.1 : speed.y = -0.1 : check_tail(speed, pos, size_x, size_y + 1) ? speed.y = 0 : NULL;
 	
 		//check_tail(speed, pos, (size_x + speed.x > 0 ? +1 : -1) * 8 + size_y) ? speed.y = 0 : NULL;
 	//	check_tail(speed, pos, (size_x) * 8 + size_y + speed.y > 0 ? +1 : -1) ? speed.y = 0 : NULL;
@@ -119,7 +119,11 @@ sf::Vector2f Map::collisions(sf::Vector2f pos,sf::Vector2f speed)
 bool Map::check_tail(sf::Vector2f speed, sf::Vector2f pos, int x, int y)
 {
 	int coef = 60;
-	if (x * 8 + y > 8 * 8 || x * 8 + y < 0)
+	int mx = 8;
+	int my = 8;
+
+
+	if (x * my + y >= mx * my || x * my + y < 0)
 		return false;
 	if(type[x * 8 + y]!=Mtype::barel)
 		return false;

@@ -1,5 +1,5 @@
 #pragma once
-#include"../файлы заголовков\Component.h"
+#include"../../Component.h"
 #include"../draw_components\TextureComponent.h"
 
 class AnimationComonent :public TextureComponent

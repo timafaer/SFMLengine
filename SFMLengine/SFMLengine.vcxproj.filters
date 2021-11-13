@@ -22,6 +22,9 @@
     <Filter Include="Файлы заголовков\components\draw">
       <UniqueIdentifier>{ea16f1f0-30e5-4107-89e9-9b5de4804a95}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\scence">
+      <UniqueIdentifier>{63f33069-76b4-4f7a-a376-bfe35a29556b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -34,6 +37,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="исходные файлы\Game.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="исходные файлы\scence.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -88,6 +94,15 @@
     </ClInclude>
     <ClInclude Include="файлы заголовков\components\draw_components\VertexComponent.h">
       <Filter>Файлы заголовков\components\draw</Filter>
+    </ClInclude>
+    <ClInclude Include="файлы заголовков\scence\scence.h">
+      <Filter>Файлы заголовков\scence</Filter>
+    </ClInclude>
+    <ClInclude Include="файлы заголовков\scence\Camera.h">
+      <Filter>Файлы заголовков\scence</Filter>
+    </ClInclude>
+    <ClInclude Include="файлы заголовков\components\another_components\Soul.h">
+      <Filter>Файлы заголовков\components\comps</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,5 +1,5 @@
 #pragma once
-#include"../файлы заголовков\Component.h"
+#include"../../Component.h"
 #include<cmath>
 class BPhysComponent :public Component
 {

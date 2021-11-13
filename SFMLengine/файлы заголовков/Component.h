@@ -9,7 +9,8 @@ enum class Type
 	bphysComponent,
 	shapeComponent,
 	colissionComponent,
-	animationComponent
+	animationComponent,
+	soulComponent
 };
 
 class Component

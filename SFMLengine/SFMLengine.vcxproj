@@ -149,6 +149,7 @@
     <ClCompile Include="исходные файлы\Game.cpp" />
     <ClCompile Include="исходные файлы\main.cpp" />
     <ClCompile Include="исходные файлы\map.cpp" />
+    <ClCompile Include="исходные файлы\scence.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="файлы заголовков\Component.h" />
@@ -157,6 +158,7 @@
     <ClInclude Include="файлы заголовков\components\another_components\BPhusComponent.h" />
     <ClInclude Include="файлы заголовков\components\another_components\Colissions.h" />
     <ClInclude Include="файлы заголовков\components\another_components\ColissionsComponent.h" />
+    <ClInclude Include="файлы заголовков\components\another_components\Soul.h" />
     <ClInclude Include="файлы заголовков\components\another_components\MoveComponent.h" />
     <ClInclude Include="файлы заголовков\components\draw_components\DrawComponent.h" />
     <ClInclude Include="файлы заголовков\components\draw_components\ShapeComponent.h" />
@@ -165,6 +167,8 @@
     <ClInclude Include="файлы заголовков\Entity.h" />
     <ClInclude Include="файлы заголовков\Game.h" />
     <ClInclude Include="файлы заголовков\map.h" />
+    <ClInclude Include="файлы заголовков\scence\Camera.h" />
+    <ClInclude Include="файлы заголовков\scence\scence.h" />
     <ClInclude Include="файлы заголовков\setter.h" />
     <ClInclude Include="файлы заголовков\WallTypesStorage.h" />
     <ClInclude Include="файлы заголовков\wall_types.h" />

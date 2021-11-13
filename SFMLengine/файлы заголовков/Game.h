@@ -2,18 +2,17 @@
 #include"Entity.h"
 #include<vector>
 #include<iostream>
+//#include"scence/scence.h"
 #include"map.h"
 class Game
 {
 private:
-	std::vector<Entity> entities;
 	sf::RenderWindow window;
 	sf::Texture texture;
 	sf::Event event;
 
-	Map map;
-	sf::Time elapsed;
-	sf::Clock clock;
+	Entity ent;
+	//Scence scence;
 
 public:
 

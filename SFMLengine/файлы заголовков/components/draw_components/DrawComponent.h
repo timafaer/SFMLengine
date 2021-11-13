@@ -1,5 +1,5 @@
 #pragma once
-#include"../файлы заголовков\Component.h"
+#include"../../Component.h"
 #include<SFML/Graphics.hpp>
 
 class DrawComponent :public Component, public sf::Drawable

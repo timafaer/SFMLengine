@@ -8,7 +8,8 @@ private:
 
 public:
 	sf::Vector2f pos = sf::Vector2f(100, 100);//временно
-	void add_component(Type type) { storage.add_component(type); }
+	template<class T>
+	void add_component() { storage.add_component<T>(); }
 
 	template<typename T>
 	decltype(auto) get() {

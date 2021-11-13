@@ -6,9 +6,9 @@ Game::Game()
 	
 	//texture.loadFromFile("texture.jpg");
 	add_entity();
-	entities[0].add_component(Type::shapeComponent);
-	entities[0].add_component(Type::bphysComponent);
-	entities[0].add_component(Type::drawComponent);
+	entities[0].add_component<ShapeComponent>();
+	entities[0].add_component<BPhysComponent>();
+	entities[0].add_component<DrawComponent>();
 	entities[0].get<DrawComponent*>()->set(&entities[0].get<ShapeComponent*>()->shape);
 	window.create(sf::VideoMode(700, 700), "SFML works!");
 	window.setFramerateLimit(60);

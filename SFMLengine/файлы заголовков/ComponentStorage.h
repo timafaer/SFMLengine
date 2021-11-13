@@ -16,27 +16,10 @@ private:
 	std::vector<Component*> components;
 
 public:
-	void add_component(Type type) {
-		switch (type)
-		{
-		case Type::component: components.push_back(new Component()); break;
-
-		case Type::drawComponent: components.push_back(new DrawComponent()); break;
-
-		case Type::textureComponent: components.push_back(new TextureComponent()); break;
-
-		case Type::vertexComponent: components.push_back(new VertexComponent()); break;
-
-		case Type::bphysComponent:components.push_back(new BPhysComponent()); break;
-
-		case Type::shapeComponent:components.push_back(new ShapeComponent()); break;
-
-		case Type::colissionComponent:components.push_back(new ColissionsComponent()); break;
-
-		case Type::animationComponent: components.push_back(new AnimationComonent()); break;
-		default:
-			break;
-		}
+	template<class T>
+	void add_component() {
+		components.push_back(new T());
+		
 	}
 
 

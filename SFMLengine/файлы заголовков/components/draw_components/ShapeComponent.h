@@ -1,6 +1,6 @@
 #pragma once
 #include"../файлы заголовков\Component.h"
-
+#include<SFML/Graphics.hpp>
 class ShapeComponent :public Component
 {
 public:

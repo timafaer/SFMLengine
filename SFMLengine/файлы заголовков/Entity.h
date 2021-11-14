@@ -9,7 +9,8 @@ private:
 public:
 	sf::Vector2f pos = sf::Vector2f(100, 100);//временно
 	template<class T>
-	void add_component() { storage.add_component<T>(); }
+	decltype(auto) 
+		add_component() { return this->storage.add_component<T>(); }
 
 	template<typename T>
 	decltype(auto) get() {
@@ -18,8 +19,8 @@ public:
 
 	void logic() {
 
-		get<BPhysComponent*>()->gravity(pos);
-		get<ShapeComponent*>()->set(pos);
+		get<BPhysComponent>().gravity(pos);
+		get<ShapeComponent>().set(pos);
 		//if (get<AnimationComonent*>() != NULL) {
 		//	get<AnimationComonent*>()->shange();
 		//}
